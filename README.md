@@ -3,7 +3,7 @@ Setup
     ASP.NET MVC Application for Visual C#
    selet mvc template
    Expense Tracker application is web app that built using the asp.net mvc framework 
-   Expense Tracker Expense Tracker is a web application built using Web API with ASP.Net MVC and Entity Framework.
+   Expense Tracker Expense Tracker is a web application built using  API Create with ASP.Net MVC and Entity Framework.
    
    ( ExpenseTracker.bacpac )  this file import sql server database
    or
@@ -11,14 +11,14 @@ Setup
     any one 
 
 
-Technologies Used ->Visual Studio 2019 ->SQL Server 2012
+Technologies ->Visual Studio 2019 ->SQL Server 2012
 
 NuGet packages: ->Entity Framework -
     
   CHANGE THE SERVERNAME
-     <connectionStrings>
-      <add name="ExpenseContext" connectionString="data source=DESKTOP-T39D065\SQLEXPRESS;    database=ExpenseTracker;persist security info=True;     Integrated Security=SSPI;" providerName="System.Data.SqlClient" />
-     </connectionStrings>
+     connectionStrings
+     add name="ExpenseContext" connectionString="data source=DESKTOP-T39D065\SQLEXPRESS;    database=ExpenseTracker;persist security info=True;     Integrated Security=SSPI;" providerName="System.Data.SqlClient" 
+     
    
 
 Features ->Add, edit, and delete expenses ->View 
