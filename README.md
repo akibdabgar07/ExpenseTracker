@@ -3,29 +3,40 @@ Setup
     ASP.NET MVC Application for Visual C#
    selet mvc template
    Expense Tracker application is web app that built using the asp.net mvc framework 
-   
-   project access instructions
+   Expense Tracker Expense Tracker is a web application built using Web API with ASP.Net MVC and Entity Framework.
    
    ( ExpenseTracker.bacpac )  this file import sql server database
    or
-    script this script file exexute in ssms
+    (script) this script file exexute in ssms
     any one 
+
+
+Technologies Used ->Visual Studio 2019 ->SQL Server 2012
+
+NuGet packages: ->Entity Framework -
     
-    CHANGE THE SERVERNAME
+  CHANGE THE SERVERNAME
      <connectionStrings>
-    <add name="ExpenseContext" connectionString="data source=DESKTOP-T39D065\SQLEXPRESS;    database=ExpenseTracker;persist security info=True;     Integrated Security=SSPI;" providerName="System.Data.SqlClient" />
-  </connectionStrings>
+      <add name="ExpenseContext" connectionString="data source=DESKTOP-T39D065\SQLEXPRESS;    database=ExpenseTracker;persist security info=True;     Integrated Security=SSPI;" providerName="System.Data.SqlClient" />
+     </connectionStrings>
    
 
+Features ->Add, edit, and delete expenses ->View 
  
-    Select MVC for Add folders and core references for.
+Features ->Add, edit, and delete Category ->View
 
-    ASP.NET Web Application for Visual C#
-    Leave Create directory for solution unchecked.
-    Create new Git repository checked.
-    Select Empty template.
-    Select MVC for Add folders and core references for.
+Featured -> On the dashboard. the list of categories should be visible along with the list of expenses.  
+           When the user clicks on any specific category, it should be highlighted and the expense list should be filtered. 
+          On the dashboard itself. total expense and total expense limit should be visible.
+   
+Featured -> for deleting category/expense
 
+·         A dialog/alert while deleting a category/expense
+
+·         Validations of incorrect input
+Featured ->When user adds and expense, if the category is selected then the expense should be added in that category only. If the category is not selected, then the user should be given a dropdown for selecting the category.
+
+STRUCTURE BASED ON MVC
 Adding a Controller
 
  Adding CategoryController.cs
@@ -63,9 +74,7 @@ Adding View
     For Razor, you can edit without having to recompile.
     
 
-Add Third Party Files
-
-    Once you add it in the root of the project, you'll need to click on the Show All Files icon to see it in Visual Studios
+USE CSS, JavaScript ,jQuery 
 
 //generates a link in Razor
 @Html.ActionLink("Dashboard", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
