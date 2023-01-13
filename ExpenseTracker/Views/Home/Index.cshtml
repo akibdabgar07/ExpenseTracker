@@ -1,0 +1,146 @@
+﻿@using ExpenseTracker.Models
+@model MultiModelData
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            /* Change your font family */
+            font-family: sans-serif;
+        }
+
+        .content-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1em;
+            min-width: 700px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+            .content-table thead tr {
+                background-color: #009879;
+                color: #ffffff;
+                text-align: left;
+                font-weight: bold;
+            }
+
+            .content-table th,
+            .content-table td {
+                padding: 12px 15px;
+            }
+
+            .content-table tbody tr {
+                border-bottom: 1px solid #dddddd;
+            }
+
+                .content-table tbody tr:nth-of-type(even) {
+                    background-color: #f3f3f3;
+                }
+
+                .content-table tbody tr:nth-of-type(odd) {
+                    background-color: #ffffff;
+                }
+
+                .content-table tbody tr:last-of-type {
+                    border-bottom: 2px solid #009879;
+                }
+
+                .content-table tbody tr.active-row {
+                    font-weight: bold;
+                    color: #009879;
+                }
+    </style>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <h1>Expense</h1>
+    <table class="content-table" class="table table-bordered table-hover table-striped" id="Filter">
+        <thead>
+            <tr>
+                <th>Expense_Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date_Time</th>
+                <th>Category</th>
+                <th>Amount</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.expenses)
+            {
+                <tr>
+                    <td>
+                        @item.E_Id
+                    </td>
+                    <td>
+                        @item.Title
+                    </td>
+                    <td>
+                        @item.Description
+                    </td>
+                    <td>
+                        @item.Date_Time
+                    </td>
+                    <td>
+                        @item.Category
+                    </td>
+                    <td>
+                        @item.Amount
+                    </td>
+
+                </tr>
+
+            }
+            <tr>
+                <td>Total Expense := &nbsp;</td>
+                <td>
+                    @Model.expenses.Sum(i => i.Amount)
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Expense Limit := &nbsp;</td>
+                <td> 100000</td>
+                <td></td>
+                <td></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>Category</h1>
+    <table class="content-table" class="table table-bordered table-hover table-striped" id="Filter">
+        <thead>
+            <tr>
+                <th>Category_Name</th>
+                <th>Category_Expense_Limit</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.categories)
+            {
+                <tr>
+                    <td>
+                        @item.Category
+                    </td>
+                    <td>
+                        @item.Category_Expense_Limit
+                    </td>
+                    <td></td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</body>
+</html>

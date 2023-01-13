@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ExpenseTracker.Models.AddingCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <h2>Category_List</h2>
+    @Html.Raw(TempData["Deleted"])
+    @Html.Raw(TempData["try"])
+    <p>
+     <h1>   <button>  @Html.ActionLink("Create New", "Create")  </button></h1>
+    </p>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category_Expense_Limit)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                using (Html.BeginForm("Delete", "Adding_Category", new { id = item.Category }))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Category)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Category_Expense_Limit)
+                        </td>
+                        <td>
+                         <button  class="btn btn-info">  @Html.ActionLink("Edit", "Edit", new { id = item.Category }) </button>  |
+                            @*@Html.ActionLink("Delete", "Delete", new { id = item.Category })*@
+                            <input type="submit" value="Delete" class="btn btn-info" onclick="return confirm('Are you sure you want to delete record with Category=@item.Category');" />
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</body>
+</html>

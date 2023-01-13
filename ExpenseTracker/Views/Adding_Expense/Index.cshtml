@@ -1,0 +1,90 @@
+﻿@model IEnumerable<ExpenseTracker.Models.AddingExpense>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>ExpenseList</h2>
+
+@Html.Raw(TempData["Deleted"])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <p>
+        <h1>   <button>  @Html.ActionLink("Create New", "Create")  </button></h1>
+    </p>
+    <table class="content-table" align="center">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date_Time)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                using (Html.BeginForm("Delete", "Adding_Expense", new { id = item.E_Id }))
+                {
+
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date_Time)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Category)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+
+                            <button class="btn btn-info">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.E_Id })
+                            </button>|
+
+                            @*@Html.ActionLink("Delete", "Delete", new { id = item.E_Id })*@
+                            <input type="submit" value="Delete" class="btn btn-info" onclick="return confirm('Are you sure you want to delete record with Id=@item.E_Id');" />
+
+                        </td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+    @*<div>
+            @Model.Sum(i => i.Amount)
+        </div>*@
+
+</body>
+</html>
