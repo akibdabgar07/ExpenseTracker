@@ -6,7 +6,8 @@ Setup
    Expense Tracker Expense Tracker is a web application built using  API Create with ASP.Net MVC and Entity Framework.
    
    ( ExpenseTracker.bacpac )  this file import sql server database
-   or
+   
+or
     (script) this script file exexute in ssms
     any one 
 
@@ -26,7 +27,7 @@ Features ->Add, edit, and delete expenses ->View
 Features ->Add, edit, and delete Category ->View
 
 Featured -> On the dashboard. the list of categories should be visible along with the list of expenses.  
-           When the user clicks on any specific category, it should be highlighted and the expense list should be filtered. 
+           When the user search for any specific category, it should be highlighted and the expense list should be filtered. 
           On the dashboard itself. total expense and total expense limit should be visible.
    
 Featured -> for deleting category/expense
