@@ -3,6 +3,19 @@ Setup
     ASP.NET MVC Application for Visual C#
    selet mvc template
    Expense Tracker application is web app that built using the asp.net mvc framework 
+   
+   project access instructions
+   
+   ( ExpenseTracker.bacpac )  this file import sql server database
+   or
+    script this script file exexute in ssms
+    any one 
+    
+    CHANGE THE SERVERNAME
+     <connectionStrings>
+    <add name="ExpenseContext" connectionString="data source=DESKTOP-T39D065\SQLEXPRESS;    database=ExpenseTracker;persist security info=True;     Integrated Security=SSPI;" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+   
 
  
     Select MVC for Add folders and core references for.
@@ -14,6 +27,10 @@ Setup
     Select MVC for Add folders and core references for.
 
 Adding a Controller
+
+ Adding CategoryController.cs
+ Adding ExpenseController.cs
+ HomeController.cs
 
     Right click Controllers folder in the project > Add > Class
     Filename for a controller class must end in Controller so Visual Studio can distinguish controllers from regular classes.
@@ -55,7 +72,10 @@ Add Third Party Files
 
 Create  Model class
 
-name Adding
+AddingCategory.cs
+AddingExpense.cs
+ExpenseContext.cs
+MultiModelData.cs
 
    
 
